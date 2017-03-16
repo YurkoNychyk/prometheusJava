@@ -31,7 +31,7 @@ public class LinkedList {
     }
 
     public boolean delete(int index) {
-        if (findNodeByIndex(index) != null) {
+        if (findNodeByIndex(index) != null ) {
 
             if (index != 0)
                 findNodeByIndex(index - 1).setNext(findNodeByIndex(index+1));
@@ -49,7 +49,7 @@ public class LinkedList {
     }
 
     private Node findNodeByIndex(int index) {
-        if (index < size) {
+        if (index < size && index >= 0) {
             Node curNode = head;
             int curIndex = 0;
             while (curIndex < index){
@@ -72,8 +72,8 @@ public class LinkedList {
             resultString.append(get(i));
 
             if (i < size-1) resultString.append(", ");
-            else resultString.append("]");
         }
+        resultString.append("]");
         return resultString.toString();
     }
 }
