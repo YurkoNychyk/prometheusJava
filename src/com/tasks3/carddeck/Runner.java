@@ -6,11 +6,21 @@ package com.tasks3.carddeck;
 public class Runner {
     public static void main(String[] args) {
         Deck cardDeck = new Deck();
-        Card topCard = cardDeck.drawOne();
-        System.out.println("TopCard" + "\nRank: " + topCard.getRank().getName() +"\nSuit: " + topCard.getSuit().getName());
         cardDeck.shuffle();
-        topCard = cardDeck.drawOne();
-        System.out.println("TopCard" + "\nRank: " + topCard.getRank().getName() +"\nSuit: " + topCard.getSuit().getName());
+        int i;
+        /*while (cardDeck.hasNext() && i < 10){
+            Card topCard = cardDeck.drawOne();
+            System.out.println(++i + ": "  + topCard.getRank().getName() +" of  " + topCard.getSuit().getName());
+        } */
+
+        System.out.println();
+        i=0;
+        cardDeck.order();
+        while (cardDeck.hasNext()){
+            Card topCard = cardDeck.drawOne();
+            System.out.println(++i + ": "  + topCard.getRank().getName() +" of " + topCard.getSuit().getName());
+        }
+
 
     }
 }
