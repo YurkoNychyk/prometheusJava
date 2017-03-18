@@ -4,7 +4,7 @@ public class Fibonacci {
     int[] fibonacciNumbers;
     int counter = 0;
 
-    public long getNumber(int position){
+    public long getNumberDynamic(int position){
         fibonacciNumbers = new int [position];
 
         for (int i = 0; i < position ; i++) {
@@ -17,15 +17,13 @@ public class Fibonacci {
        return fibonacciNumbers[position-1];
     }
 
-    public long getNumberRecur (int position) {
-        return fib(position);
-    }
-
-    private int fib(int n) {
-        if (n > 2) {
-            return fib(n - 1 ) + fib(n-2);
+    public int getNumber(int position) {
+        if (position > 2) {
+            return getNumber(position - 1 ) + getNumber(position-2);
         }
         else
             return 1;
     }
+
+
 }
