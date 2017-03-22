@@ -11,9 +11,9 @@ public class Deck {
     public Deck() {
         cardList = new LinkedList<>();
 
-        for (int suit = 0; suit < Suit.values.length; suit++) {
-            for (int rank = 0; rank < Rank.values.length; rank++){
-                cardList.add(new Card(Rank.values[rank], Suit.values[suit]));
+        for (int suit = 0; suit < Suit.values().length; suit++) {
+            for (int rank = 0; rank < Rank.values().length; rank++){
+                cardList.add(new Card(Rank.values()[rank], Suit.values()[suit]));
             }
         }
 
@@ -52,10 +52,10 @@ public class Deck {
                 int rankCard1 = 0;
                 int rankCard2 = 0;
 
-                for (int i = 0; i < Rank.values.length; i++) {
-                    if (card1.getRank().getName().equals(Rank.values[i].getName()))
+                for (int i = 0; i < Rank.values().length; i++) {
+                    if (card1.getRank().getName().equals(Rank.values()[i].getName()))
                         rankCard1 = i;
-                    if (card2.getRank().getName().equals(Rank.values[i].getName()))
+                    if (card2.getRank().getName().equals(Rank.values()[i].getName()))
                         rankCard2 = i;
 
                 }

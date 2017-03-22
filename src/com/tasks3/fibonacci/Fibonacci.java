@@ -2,7 +2,6 @@ package com.tasks3.fibonacci;
 
 public class Fibonacci {
     int[] fibonacciNumbers;
-    int counter = 0;
 
     public long getNumberDynamic(int position){
         fibonacciNumbers = new int [position];
@@ -18,9 +17,8 @@ public class Fibonacci {
     }
 
     public int getNumber(int position) {
-        if (position > 2) {
+        if (position > 2)
             return getNumber(position - 1 ) + getNumber(position-2);
-        }
         else
             return 1;
     }
